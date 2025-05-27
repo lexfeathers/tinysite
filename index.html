@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+        <!-- end google fonts -->
+        <title>Lex Feathers' tiny website</title>
+        <style>
+            :root {
+                --color-background: #101010;
+                --color-background-lighter: #141414;
+                --color-text: #a4eae3;
+                --color-secondary: #ba4e65;
+            }
+            .atkinson-hyperlegible-next-light {
+                font-family: "Atkinson Hyperlegible Next", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 200;
+                font-style: normal;
+            }          
+            .atkinson-hyperlegible-next-regular {
+                font-family: "Atkinson Hyperlegible Next", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+            }          
+            /* Font loading */
+            /* end font loading */
+            body {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                background-color: var(--color-background);
+                color: var(--color-text);
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: 300;
+                height: 100vh;
+            }
+            header, 
+            main,
+            footer {
+                width: 42rem;
+                margin: auto;
+                padding: 2rem;
+                background-color: var(--color-background-lighter);
+                font-size: 16pt;
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+            h1, h2, h3 {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-style: italic;
+                font-size: 24pt;
+                font-weight: 100 !important;
+            }
+            h1 {
+                font-size: 42pt;
+                font-weight: 600 !important;
+                color: var(--color-secondary);
+            }
+            p {
+                font-family: "Atkinson Hyperlegible Next", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 200;
+                font-style: normal;
+                line-height: 1.4;
+            }
+            a {
+                color: var(--color-secondary);
+                text-decoration: none;
+                border-bottom: 1px solid var(--color-secondary);
+                transition: 200ms;
+            }
+            a:hover {
+                border-bottom: 3px solid color-mix(in srgb, var(--color-secondary), white 20%);
+                color: color-mix(in srgb, var(--color-secondary), white 20%);
+            }
+            ul {
+                list-style-type: circle;
+            }
+            ::marker {
+                font-size: 24pt;
+            }
+            li {
+                background-color: color-mix(in srgb, var(--color-background-lighter), var(--color-text) 5%);
+                padding: 1rem;
+                border-radius: 6px;
+                margin-bottom: 1rem;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background-color: var(--color-secondary);
+            }
+            img {
+                max-width: 100%;
+            }
+            #about {
+                margin-bottom: 4rem;
+            }
+            @media screen and (max-width: 749px) {
+                header, main, footer {
+                    max-width: calc(100% - 2rem);
+                    padding: 1rem;
+                }
+                ul {
+                    padding-left: 0;
+                    list-style: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>A Tiny Website</h1>
+            <p>by <a href="https://lexfeathers.ca" target="_blank">Lex Feathers</a></p>
+        </header>
+        <main>
+            <div class="container">
+                <div id="about">
+                    <h2>Welcome!</h2>
+                    <p>
+                        This website was built from scratch with a single HTML file. The goal is: as long as browsers support HTML, no JS library going out of date will take it down or cause me to spend hours/days trying to just restore my ability to post on it. 
+                    </p>
+                    <p>
+                        If you're curious about my more complex work, you can find my portfolio at <a href="https://portfolio.lexfeathers.ca" target="_blank">Lexfeathers.ca</a>.
+                    </p>
+                </div>
+                <!-- Put posts below -->
+                <ul>
+                    <!-- <li>
+                        <h2>This is a "post"</h2>
+                        <hr>
+                        <p>
+                            And this is the body of that post.
+                        </p>
+                    </li>                     -->
+                    <li>
+                        <h2>This is a post title</h2>
+                        <hr>
+                        <p>
+                            And this is the post body.
+                        </p>
+                    </li>                    
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; <span id="current-year"></span> Lex Feathers</p>
+        </footer>
+    </body>
+    <script>
+        // Add the current year to the current-year span element in the footer.
+        document.getElementById("current-year").innerHTML = new Date().getFullYear();
+    </script>
+</html>
